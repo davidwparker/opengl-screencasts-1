@@ -1,5 +1,8 @@
-OpenGL-Skeleton
+OpenGL-Screencasts Episodes 1-3
 
-This project is a "skeleton" that can be used in order to get 
-an OpenGL project up and going as fast as possible.
+These screencasts use OpenGL 2.1 and GLUT.
+They are meant to be used as an introduction to OpenGL.
+
+If you have any problems with the code, please let me know by filing a bug report.
+
 
