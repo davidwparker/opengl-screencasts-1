@@ -1,8 +1,8 @@
 # Target to build
-#TARGET = 001 002
-TARGET = 001
-#EXECS = ./executables/001 ./executables/002
-EXECS = ./executables/001
+TARGET = 001 002
+#TARGET = 002
+EXECS = ./executables/001 ./executables/002
+#EXECS = ./executables/002
 
 # Libraries - LINUX
 #LIBS=-lglut -lGLU
@@ -16,9 +16,11 @@ all: $(TARGET)
 	gcc -c -O -Wall $<
 
 # Generic compile and link
-%: %.c
+%: %.c screencasts.a
 	gcc -Wall -O3 -o ./executables/$@ $^ $(LIBS)
 
 clean:
 	rm -f $(EXECS) *.o *.a
 
+screencasts.a:print.o
+	ar -rcs screencasts.a $^
