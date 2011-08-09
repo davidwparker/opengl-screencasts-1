@@ -1,2 +1,4 @@
 executables/*
 *~
+*.o
+*.a
