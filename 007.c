@@ -123,41 +123,41 @@ void drawShape()
   /* Cube */
   glBegin(GL_QUADS);
   /* front => ABCD yellow */
-  /*glColor3f(1.0,1.0,0.0);
+  glColor3f(1.0,1.0,0.0);
   glVertex3fv(vertA);
   glVertex3fv(vertB);
   glVertex3fv(vertC);
-  glVertex3fv(vertD);*/
+  glVertex3fv(vertD);
   /* back => FEHG red */
-  /*glColor3f(1.0,0.0,0.0);
+  glColor3f(1.0,0.0,0.0);
   glVertex3fv(vertF);
   glVertex3fv(vertE);
   glVertex3fv(vertH);
-  glVertex3fv(vertG);*/
+  glVertex3fv(vertG);
   /* right => EADH green */
-  /*glColor3f(0.0,1.0,0.0);
+  glColor3f(0.0,1.0,0.0);
   glVertex3fv(vertE);
   glVertex3fv(vertA);
   glVertex3fv(vertD);
-  glVertex3fv(vertH);*/
+  glVertex3fv(vertH);
   /* left => BFGC blue */
-  /*glColor3f(0.0,0.0,1.0);
+  glColor3f(0.0,0.0,1.0);
   glVertex3fv(vertB);
   glVertex3fv(vertF);
   glVertex3fv(vertG);
-  glVertex3fv(vertC);*/
+  glVertex3fv(vertC);
   /* top => EFBA turquoise */
-  /*glColor3f(0.0,1.0,1.0);
+  glColor3f(0.0,1.0,1.0);
   glVertex3fv(vertE);
   glVertex3fv(vertF);
   glVertex3fv(vertB);
-  glVertex3fv(vertA);*/
+  glVertex3fv(vertA);
   /* bottom => DCGH pink */
   glColor3f(1.0,0.0,1.0);
-  /*glVertex3fv(vertD);
+  glVertex3fv(vertD);
   glVertex3fv(vertC);
   glVertex3fv(vertG);
-  glVertex3fv(vertH);*/
+  glVertex3fv(vertH);
   glEnd();
 }
 
@@ -169,10 +169,9 @@ void drawShape()
 void display()
 {
   /*  Clear the image */
-  glClear(GL_COLOR_BUFFER_BIT);
-  // TODO: GL_DEPTH_BUFFER_BIT
+  glClear(GL_COLOR_BUFFER_BIT|GL_DEPTH_BUFFER_BIT);
   /*  Enable Z-buffering in OpenGL */
-  // TODO: glEnable(GL_DEPTH_TEST);
+  glEnable(GL_DEPTH_TEST);
 
   /*  Reset previous transforms */
   glLoadIdentity();
@@ -182,6 +181,7 @@ void display()
     double Ex = -2*dim*Sin(th)*Cos(ph);
     double Ey = +2*dim        *Sin(ph);
     double Ez = +2*dim*Cos(th)*Cos(ph);
+    /* camera/eye position, aim of camera lens, up-vector */
     gluLookAt(Ex,Ey,Ez , 0,0,0 , 0,Cos(ph),0);
   }
   /*  Orthogonal - set world orientation */
@@ -277,8 +277,7 @@ void windowMenu(int value)
 int main(int argc,char* argv[])
 {
   glutInit(&argc,argv);
-  glutInitDisplayMode(GLUT_RGB | GLUT_DOUBLE);
-  // TODO: GLUT_DEPTH
+  glutInitDisplayMode(GLUT_RGB | GLUT_DOUBLE | GLUT_DEPTH);
   glutInitWindowSize(windowWidth,windowHeight);
   glutCreateWindow(windowName);
 
@@ -290,6 +289,7 @@ int main(int argc,char* argv[])
   glutCreateMenu(windowMenu);
   glutAddMenuEntry("Toggle Axes [a]",'a');
   glutAddMenuEntry("Toggle Values [v]",'v');
+  glutAddMenuEntry("Toggle Mode [m]",'m');
   glutAttachMenu(GLUT_RIGHT_BUTTON);
 
   glutMainLoop();
