@@ -7,7 +7,7 @@ void printv(va_list args, const char* format)
   char* ch=buf;
   vsnprintf(buf,LEN,format,args);
   while (*ch)
-    glutBitmapCharacter(GLUT_BITMAP_HELVETICA_10,*ch++);
+    glutBitmapCharacter(GLUT_BITMAP_HELVETICA_18,*ch++);
 }
 
 void print(const char* format, ...)

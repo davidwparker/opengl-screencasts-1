@@ -1,8 +1,8 @@
 # Target to build
-#TARGET = 001 002 003 004 005 006
-TARGET = 006
-#EXECS = ./executables/001 ./executables/002 ./executables/003 ./executables/004 ./executables/005 ./executables/006
-EXECS = ./executables/006
+#TARGET = 001 002 003 004 005 006 007
+TARGET = 007
+#EXECS = ./executables/001 ./executables/002 ./executables/003 ./executables/004 ./executables/005 ./executables/006 ./executables/007
+EXECS = ./executables/007
 
 # Libraries - LINUX
 #LIBS=-lglut -lGLU
