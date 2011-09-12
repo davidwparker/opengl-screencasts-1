@@ -8,7 +8,7 @@
 
 /*  Globals */
 double dim=3.0; /* dimension of orthogonal box */
-char *windowName = "OpenGL screenscasts 9: Rotation, Scaling, and Transformations";
+char *windowName = "OpenGL screenscasts 9: Rotation, Scaling, and Translations";
 int windowWidth=500;
 int windowHeight=450;
 
