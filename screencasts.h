@@ -20,6 +20,7 @@
 #include <GL/glut.h>
 #endif
 
+/* prototypes */
 #include "prototypes.h"
 
 #endif
